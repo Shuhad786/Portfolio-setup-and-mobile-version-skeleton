@@ -225,6 +225,69 @@ nav:hover {
   color: white;
 }
 
+.Project_work #Placeholder1 {
+  order: 0;
+  width: 327px;
+  height: 236px;
+  background: linear-gradient(0deg, white, white);
+}
+
+.Project_work #posted1 {
+  order: 0;
+  display: flex;
+  width: 327px;
+  height: 105px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 44px;
+  align-items: center;
+  color: white;
+}
+
+.Project_work #Placeholder2 {
+  order: 0;
+  width: 327px;
+  height: 236px;
+  background: linear-gradient(0deg, white, white);
+}
+
+.Project_work #posted2 {
+  order: 0;
+  display: flex;
+  width: 327px;
+  height: 105px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 44px;
+  align-items: center;
+  color: white;
+}
+
+.Project_work #Placeholder3 {
+  order: 0;
+  width: 327px;
+  height: 236px;
+  background: linear-gradient(0deg, white, white);
+}
+
+.Project_work #posted3 {
+  order: 0;
+  display: flex;
+  width: 327px;
+  height: 105px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 44px;
+  align-items: center;
+  color: white;
+}
+
 .Project_work #ellipse19 {
   order: 0;
   position: absolute;
@@ -335,6 +398,231 @@ nav:hover {
 }
 
 .Project_work #ruby1 {
+  order: 0;
+  width: 37px;
+  height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.Project_work #text1 {
+  order: 0;
+  width: 327px;
+  height: 204px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: #dcdce8;
+  margin-top: -20px;
+}
+
+.Project_work #techstack2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: -70px;
+}
+
+#techstack2 img {
+  width: 1px;
+  height: 40px;
+  background: #555;
+}
+
+.Project_work #css2 {
+  order: 0;
+  width: 25px;
+  height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.Project_work #html2 {
+  order: 0;
+  width: 32px;
+  height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.Project_work #bootstrap2 {
+  order: 0;
+  width: 71px;
+  height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.Project_work #ruby2 {
+  order: 0;
+  width: 37px;
+  height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.Project_work #text2 {
+  order: 0;
+  width: 327px;
+  height: 204px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: #dcdce8;
+  margin-top: -20px;
+}
+
+.Project_work #techstack3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: -70px;
+}
+
+#techstack3 img {
+  width: 1px;
+  height: 40px;
+  background: #555;
+}
+
+.Project_work #css3 {
+  order: 0;
+  width: 25px;
+  height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.Project_work #html3 {
+  order: 0;
+  width: 32px;
+  height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.Project_work #bootstrap3 {
+  order: 0;
+  width: 71px;
+  height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.Project_work #ruby3 {
+  order: 0;
+  width: 37px;
+  height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.Project_work #text3 {
+  order: 0;
+  width: 327px;
+  height: 204px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: #dcdce8;
+  margin-top: -20px;
+}
+
+.Project_work #techstack4 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: -70px;
+}
+
+#techstack4 img {
+  width: 1px;
+  height: 40px;
+  background: #555;
+}
+
+.Project_work #css4 {
+  order: 0;
+  width: 25px;
+  height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.Project_work #html4 {
+  order: 0;
+  width: 32px;
+  height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.Project_work #bootstrap4 {
+  order: 0;
+  width: 71px;
+  height: 20px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.Project_work #ruby4 {
   order: 0;
   width: 37px;
   height: 20px;
