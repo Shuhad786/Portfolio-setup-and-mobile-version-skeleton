@@ -118,7 +118,7 @@ nav:hover {
   margin-top: 30px;
   flex-direction: column;
   list-style: none;
-  color: #f5f5ff;
+  color: #9490ff;
 }
 
 .skill {
@@ -131,18 +131,6 @@ nav:hover {
   margin-top: 30px;
   flex-direction: column;
   list-style: none;
-  color: #f5f5ff;
-}
-
-#li1 {
-  color: #9490ff;
-}
-
-#li2 {
-  color: #9490ff;
-}
-
-#li3 {
   color: #9490ff;
 }
 
@@ -179,7 +167,7 @@ nav:hover {
   padding-right: 20px;
 }
 
-.Project_work #work {
+.Project_work .work {
   padding-top: 150px;
   justify-content: center;
   align-items: center;
@@ -194,7 +182,7 @@ nav:hover {
   order: 0;
 }
 
-.Project_work #divider {
+.Project_work .divider {
   width: 327px;
   height: 0;
   border: 1px solid #646369;
@@ -204,77 +192,14 @@ nav:hover {
   order: 0;
 }
 
-.Project_work #Placeholder {
+.Project_work .Placeholder {
   order: 0;
   width: 327px;
   height: 236px;
   background: linear-gradient(0deg, white, white);
 }
 
-.Project_work #posted {
-  order: 0;
-  display: flex;
-  width: 327px;
-  height: 105px;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 44px;
-  align-items: center;
-  color: white;
-}
-
-.Project_work #Placeholder1 {
-  order: 0;
-  width: 327px;
-  height: 236px;
-  background: linear-gradient(0deg, white, white);
-}
-
-.Project_work #posted1 {
-  order: 0;
-  display: flex;
-  width: 327px;
-  height: 105px;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 44px;
-  align-items: center;
-  color: white;
-}
-
-.Project_work #Placeholder2 {
-  order: 0;
-  width: 327px;
-  height: 236px;
-  background: linear-gradient(0deg, white, white);
-}
-
-.Project_work #posted2 {
-  order: 0;
-  display: flex;
-  width: 327px;
-  height: 105px;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 44px;
-  align-items: center;
-  color: white;
-}
-
-.Project_work #Placeholder3 {
-  order: 0;
-  width: 327px;
-  height: 236px;
-  background: linear-gradient(0deg, white, white);
-}
-
-.Project_work #posted3 {
+.Project_work .posted {
   order: 0;
   display: flex;
   width: 327px;
