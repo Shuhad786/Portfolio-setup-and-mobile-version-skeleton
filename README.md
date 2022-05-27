@@ -20,6 +20,10 @@ VS Code and github
 
 To get a local copy up and running follow these simple example steps.
 
+Use gitclone to clone the repository either with ssh key if setup or with http directly onto desktop it will create a folder for you.
+
+Open the folder with VSCode and run project to view outcome.
+
 ### Prerequisites
 Require github account, Google chrome
 ### Setup
