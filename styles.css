@@ -32,7 +32,21 @@ body {
   justify-items: center;
   align-items: center;
   flex-direction: column;
-  gap: 12px;
+}
+
+a:link {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+nav:hover {
+  color: white;
+  background-color: #9490ff;
 }
 
 .main_head {
