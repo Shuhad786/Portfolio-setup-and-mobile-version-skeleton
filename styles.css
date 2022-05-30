@@ -276,12 +276,14 @@ nav:hover {
   margin-left: 20px;
 }
 
-.Project_work .techstack {
+.techstack {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  margin-left: 10px;
+  margin-left: -35px;
+  list-style: none;
+  color: #fff;
 }
 
 .techstack img {
