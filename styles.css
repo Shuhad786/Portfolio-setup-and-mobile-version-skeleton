@@ -367,7 +367,7 @@ nav:hover {
 }
 
 .Project_work button {
-  display: flex;
+  display: inline-block;
   align-items: center;
   text-align: center;
   width: 89px;
@@ -382,6 +382,7 @@ nav:hover {
   margin-bottom: 40px;
   margin-top: 30px;
   margin-left: 25px;
+  border: none;
 }
 
 .Contact-form h2 {
@@ -420,30 +421,35 @@ nav:hover {
   flex-direction: column;
   text-align: center;
   margin-left: 20px;
-  order: 0;
 }
 
-.form-info #textbox1 {
-  margin-bottom: 24px;
+.form-info input {
   width: 327px;
   height: 48px;
-}
-
-.form-info #textbox2 {
   margin-bottom: 24px;
-  width: 327px;
-  height: 48px;
-  background: #f7f3ff;
-  border: 1px solid #9490ff;
+  border-radius: 5px;
+  padding-left: 10px;
+  border: none;
+  outline: none;
 }
 
-.form-info #textbox3 {
-  width: 327px;
+.form-info input:invalid {
+  box-shadow: 0 0 5px 6px red;
+}
+
+.form-info textarea {
+  width: 335px;
   height: 148px;
+  border: none;
+  outline: none;
 }
 
-.Contact-form button {
-  display: flex;
+.form-info textarea:invalid {
+  box-shadow: 0 0 5px 6px red;
+}
+
+.button {
+  display: inline-block;
   align-items: center;
   text-align: center;
   width: 89px;
@@ -455,10 +461,19 @@ nav:hover {
   line-height: 24px;
   color: #edecff;
   background-color: #7d73fc;
-  margin-bottom: 40px;
   margin-top: 30px;
-  margin-left: 140px;
+  margin-left: 120px;
+  margin-bottom: 30px;
+  border: none;
+  transition: 0.5s;
+  cursor: pointer;
   order: 0;
+}
+
+.button:hover {
+  background: #7d73fc;
+  box-shadow: 0 8px 30px rgba(125, 115, 252, 0.48);
+  color: #edecff;
 }
 
 .Contact-form #large-divider {
@@ -471,7 +486,7 @@ nav:hover {
 }
 
 .Contact-form .icons {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .Contact-form #email {
@@ -481,7 +496,7 @@ nav:hover {
 
 .Contact-form #indicator {
   position: absolute;
-  top: 5870px;
+  top: 5860px;
   width: 134px;
   height: 5px;
   left: 140px;
