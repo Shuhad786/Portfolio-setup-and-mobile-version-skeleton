@@ -12,7 +12,7 @@ body {
   animation-duration: 2s;
 }
 
-/* @keyframes Body_change {
+@keyframes Body_change {
   from {
     background: #0d1513;
     transition: 350ms;
@@ -22,7 +22,7 @@ body {
     background: #191765;
     transition: 350ms ease-in;
   }
-} */
+}
 
 /* My coding partners animation Body_change */
 
@@ -508,7 +508,7 @@ nav:hover {
   gap: 21px;
 }
 
-/* @keyframes head_change {
+@keyframes head_change {
   from {
     color: #0d1513;
   }
@@ -516,7 +516,7 @@ nav:hover {
   to {
     color: #9390ff;
   }
-} */
+}
 
 /* My animation head_change */
 
