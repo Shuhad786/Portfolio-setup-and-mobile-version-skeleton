@@ -16,6 +16,10 @@ npm package for linters
 - Technologies used
 VS Code and github
 
+## Live demo
+
+[Shuhad786's demo](https://shuhad786.github.io/Portfolio-setup-and-mobile-version-skeleton/)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
