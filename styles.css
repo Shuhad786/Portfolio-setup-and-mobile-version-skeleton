@@ -1,12 +1,12 @@
 html {
-  width: 100%;
-  overflow-x: hidden;
+  width: 1440px;
+  overflow: visible;
 }
 
 body {
   background: #191765;
   margin: 0;
-  width: 100%;
+  width: 1440px;
   overflow-x: hidden;
   animation-name: Body_change;
   animation-duration: 2s;
@@ -30,16 +30,17 @@ body {
   html {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    width: 100%;
+    overflow: visible;
+    width: 375px;
     height: 4100px;
   }
 
   body {
-    width: 100%;
+    width: 375px;
     margin: 0%;
     height: 4100px;
     position: relative;
+    overflow: visible;
   }
 
   .mobile-container {
@@ -1672,3 +1673,5 @@ nav:hover {
   width: 17.99px;
   margin-left: 30px;
 }
+
+/* end of code */
