@@ -1392,7 +1392,7 @@ nav:hover {
     border: none;
     outline: none;
     position: relative;
-    left: 0;
+    left: -10px;
     top: -380px;
     order: 0;
   }
@@ -1405,7 +1405,7 @@ nav:hover {
     border: none;
     outline: none;
     position: relative;
-    left: 0;
+    left: -10px;
     top: -350px;
     order: 0;
   }
@@ -1421,7 +1421,7 @@ nav:hover {
     outline: none;
     order: 0;
     position: relative;
-    left: 0;
+    left: -10px;
     top: -340px;
   }
 
