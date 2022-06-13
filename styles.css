@@ -1,14 +1,16 @@
 html {
-  width: 100%;
-  overflow: auto;
+  width: 1440px;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
 }
 
 body {
   background: #191765;
   margin: 0;
-  width: 100%;
-  overflow-x: hidden;
+  width: 1440px;
   background-size: contain;
+  padding: 0;
   animation-name: Body_change;
   animation-duration: 2s;
 }
@@ -27,25 +29,20 @@ body {
 
 /* My coding partners animation Body_change */
 
-@media only screen and (max-width: 768px) {
-  html {
+@media (max-width: 768px) {
+  html body {
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 375px;
+    height: 4600px;
+    background-size: contain;
     overflow-x: hidden;
   }
 
-  body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    background-size: contain;
-  }
-
   .mobile-container {
-    width: 100%;
+    width: 375px;
     padding: 0;
+    margin: 0;
   }
 
   .mobile-container .top_left {
@@ -66,7 +63,7 @@ body {
     width: 80px;
     height: 80px;
     top: 570px;
-    left: 380px;
+    left: 350px;
     background: #edecff;
     filter: blur(20px);
     border-radius: 50%;
@@ -75,7 +72,7 @@ body {
   }
 
   .mobile-container .top {
-    padding: 20px;
+    padding-top: 20px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-size: 18px;
@@ -86,7 +83,7 @@ body {
     justify-items: center;
     letter-spacing: 0.03em;
     width: 100%;
-    gap: 10px;
+    gap: 0;
   }
 
   .mobile-container .top .nav1 .nav-menu {
@@ -100,6 +97,7 @@ body {
     width: 100%;
     height: 100%;
     gap: 60px;
+    left: -100%;
   }
 
   .mobile-container .top .nav1 .nav-link {
@@ -111,6 +109,10 @@ body {
   .mobile-container .top .nav1 .nav-menu.active {
     left: 0%;
     z-index: 1;
+    background-image: url(./images/shapes-menu.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
   }
 
   .mobile-container .top .nav1 .nav-email {
@@ -122,18 +124,20 @@ body {
     justify-items: center;
     align-items: center;
     flex-direction: column;
+    padding: 0;
+    margin: 0;
   }
 
   .mobile-container .top .hamburger {
     display: block;
-    margin-left: 210px;
+    margin-left: 200px;
   }
 
   .mobile-container .top .hamburger .bar {
     display: block;
     width: 25px;
     height: 3px;
-    margin: 5px auto;
+    margin: 5px;
     transition: all 0.3s ease-in-out;
     background-color: #fff;
   }
@@ -202,18 +206,21 @@ body {
     justify-content: center;
     align-items: center;
     top: 566px;
-    left: 40px;
+    left: 25px;
   }
 
   .mobile-container .head .divider img {
     display: none;
   }
 
-  .mobile-container .head .language .list {
-    display: flex;
+  .mobile-container .head .language {
+    display: block;
     position: relative;
+    left: 40px;
+  }
+
+  .mobile-container .head .language .list {
     font-size: 20px;
-    left: -170px;
     color: #9490ff;
   }
 
@@ -227,43 +234,39 @@ body {
     color: #edecff;
   }
 
-  .mobile-container .head .framework .list {
-    display: flex;
-    font-size: 20px;
+  .mobile-container .head .framework {
     position: relative;
-    left: -200px;
-    top: 17px;
+    left: 70px;
+    top: -245px;
+  }
+
+  .mobile-container .head .framework .list {
+    font-size: 20px;
     color: #9490ff;
   }
 
   .mobile-container .head .framework li {
-    display: flex;
-    position: relative;
-    margin-top: 25px;
-    left: -200px;
-    top: 17px;
     font-size: 18px;
     list-style: none;
     color: #edecff;
   }
 
-  .mobile-container .head .skill .list {
+  .mobile-container .head .skill {
     position: relative;
+    left: -130px;
+    top: -230px;
+  }
+
+  .mobile-container .head .skill .list {
     color: #9490ff;
     font-size: 20px;
-    left: -126px;
-    top: 287px;
-    width: 1000px;
   }
 
   .mobile-container .head .skill li {
     margin-top: 25px;
-    position: relative;
-    left: -123px;
     font-size: 18px;
     list-style: none;
     color: #edecff;
-    top: 287px;
   }
 
   .mobile-container .head .divider2 {
@@ -364,7 +367,7 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   width: 100%;
-  gap: 1300px;
+  gap: 1000px;
 }
 
 .top .nav1 .nav-menu {
@@ -372,6 +375,7 @@ body {
   text-align: center;
   align-items: center;
   gap: 25px;
+  width: fit-content;
 }
 
 .top .nav1 .nav-item {
@@ -470,12 +474,13 @@ nav:hover {
   position: relative;
   height: 0;
   border: 1px solid #646369;
-  left: 90px;
+  left: 130px;
 }
 
 .language {
+  display: block;
   position: relative;
-  left: 50px;
+  left: 90px;
 }
 
 .language .list {
@@ -496,8 +501,9 @@ nav:hover {
 }
 
 .framework {
+  display: block;
   position: relative;
-  left: 240px;
+  left: 280px;
   top: -258px;
 }
 
@@ -519,8 +525,9 @@ nav:hover {
 }
 
 .skill {
+  display: block;
   position: relative;
-  left: 450px;
+  left: 490px;
   top: -550px;
 }
 
@@ -547,7 +554,7 @@ nav:hover {
   position: relative;
   height: 0;
   border: 1px solid #646369;
-  left: 90px;
+  left: 130px;
   top: -540px;
 }
 
@@ -562,7 +569,7 @@ nav:hover {
   justify-content: center;
   position: relative;
   top: -450px;
-  left: -20px;
+  left: 0px;
   gap: 21px;
 }
 
@@ -687,7 +694,7 @@ nav:hover {
   .mobile-container .Project_work .workform1 .posted {
     order: 0;
     display: flex;
-    width: 1000px;
+    width: 327px;
     height: 105px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -776,6 +783,7 @@ nav:hover {
     filter: blur(20px);
     border-radius: 50%;
     margin: 0;
+    padding: 0;
     transform: matrix(-1, -0.1, -0.54, 0.84, 0, 0);
   }
 
@@ -797,8 +805,8 @@ nav:hover {
     order: 0;
     position: absolute;
     width: 120px;
-    height: 377.04px;
-    left: 370px;
+    height: 140px;
+    left: 300px;
     top: 4050px;
     background: #edecff;
     filter: blur(30px);
@@ -1352,9 +1360,9 @@ nav:hover {
 .ellipse_19 {
   position: absolute;
   width: 50px;
-  height: 1200px;
-  left: -100px;
-  top: 800px;
+  height: 600px;
+  left: 0;
+  top: 1400px;
   background: #edecff;
   filter: blur(20px);
   border-radius: 50%;
@@ -1552,14 +1560,14 @@ nav:hover {
 
   .Contact-form .indicator {
     position: absolute;
-    top: 5610px;
+    top: 5580px;
     width: 134px;
     height: 5px;
     bottom: 8px;
     background: #0d1513;
     border-radius: 10px;
     order: 0;
-    left: 140px;
+    left: 13s0px;
   }
 
   .mobile-container .Contact-form .email-link {
