@@ -1,8 +1,7 @@
 html {
-  width: 1440px;
   margin: 0;
   padding: 0;
-  overflow: visible;
+  overflow-x: hidden;
 }
 
 body {
@@ -35,7 +34,6 @@ body {
     padding: 0;
     width: 375px;
     height: 4600px;
-    background-size: contain;
     overflow-x: hidden;
   }
 
@@ -569,7 +567,7 @@ nav:hover {
   justify-content: center;
   position: relative;
   top: -450px;
-  left: 0px;
+  left: 0;
   gap: 21px;
 }
 
@@ -1567,7 +1565,7 @@ nav:hover {
     background: #0d1513;
     border-radius: 10px;
     order: 0;
-    left: 13s0px;
+    left: 130px;
   }
 
   .mobile-container .Contact-form .email-link {
