@@ -32,6 +32,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    overflow-x: hidden;
   }
 
   body {
@@ -40,6 +41,7 @@ body {
     padding: 0;
     position: relative;
     background-size: contain;
+    overflow-x: hidden;
   }
 
   .mobile-container {
@@ -85,22 +87,35 @@ body {
     justify-items: center;
     letter-spacing: 0.03em;
     width: 100%;
-    gap: 210px;
+    gap: 10px;
   }
 
-  .mobile-container .top .nav1 {
+  .mobile-container .top .nav1 .nav-menu {
     position: fixed;
-    right: -100%;
-    flex-direction: column;
+    display: flex;
     top: 40px;
-    gap: 0;
+    flex-direction: column;
+    text-align: left;
+    transition: 0.3s ease-in-out;
     background-color: #191765;
     width: 100%;
-    text-align: right;
+    height: 100%;
+    gap: 60px;
   }
 
-  .mobile-container .top .nav1.active {
-    left: 0;
+  .mobile-container .top .nav1 .nav-link {
+    position: relative;
+    top: 40px;
+    font-size: 30px;
+  }
+
+  .mobile-container .top .nav1 .nav-menu.active {
+    left: 0%;
+    z-index: 1;
+  }
+
+  .mobile-container .top .nav1 .nav-email {
+    display: none;
   }
 
   .mobile-container .head {
@@ -112,6 +127,7 @@ body {
 
   .mobile-container .top .hamburger {
     display: block;
+    margin-left: 210px;
   }
 
   .mobile-container .top .hamburger .bar {
@@ -128,11 +144,11 @@ body {
   }
 
   .mobile-container .top .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotateY(45deg);
+    transform: translateY(8px) skewY(45deg);
   }
 
   .mobile-container .top .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotateY(-45deg);
+    transform: translateY(-8px) skewY(-45deg);
   }
 
   .mobile-container .head .main_head {
@@ -345,14 +361,21 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
   width: 100%;
+  gap: 1300px;
 }
 
-.top .nav1 {
+.top .nav1 .nav-menu {
   display: flex;
-  position: relative;
-  left: 1360px;
-  gap: 15px;
+  text-align: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.top .nav1 .nav-item {
+  display: inline;
   line-height: 16px;
+  width: 100%;
+  list-style: none;
 }
 
 @media only screen and (min-width: 768px) {
