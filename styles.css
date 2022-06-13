@@ -1,6 +1,6 @@
 html {
   width: 100%;
-  overflow: visible;
+  overflow: auto;
 }
 
 body {
@@ -31,7 +31,7 @@ body {
   html {
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 375px;
     overflow-x: hidden;
   }
 
@@ -311,6 +311,10 @@ body {
     left: 0;
     top: -100px;
   }
+
+  .mobile-container .head .work-icon2 {
+    display: none;
+  }
 }
 
 .mobile-container {
@@ -342,7 +346,7 @@ body {
   width: 300px;
   height: 300px;
   top: 500px;
-  left: 1350px;
+  left: 80%;
   background: #edecff;
   border-radius: 50%;
   filter: blur(50px);
