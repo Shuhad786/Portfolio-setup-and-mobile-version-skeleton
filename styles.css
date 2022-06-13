@@ -41,7 +41,6 @@ body {
     padding: 0;
     position: relative;
     background-size: contain;
-    overflow-x: hidden;
   }
 
   .mobile-container {
