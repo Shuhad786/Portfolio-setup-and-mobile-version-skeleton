@@ -8,6 +8,7 @@ body {
   margin: 0;
   width: 1440px;
   overflow-x: hidden;
+  background-size: contain;
   animation-name: Body_change;
   animation-duration: 2s;
 }
@@ -30,22 +31,20 @@ body {
   html {
     margin: 0;
     padding: 0;
-    overflow: visible;
+    overflow-x: hidden;
     width: 375px;
-    height: 4100px;
   }
 
   body {
-    width: 375px;
+    width: 100%;
     margin: 0%;
-    height: 4100px;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
+    background-size: contain;
   }
 
   .mobile-container {
     width: 375px;
-    height: 5415px;
   }
 
   .mobile-container .top_left {
