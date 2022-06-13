@@ -1,12 +1,12 @@
 html {
-  width: 1440px;
+  width: 100%;
   overflow: visible;
 }
 
 body {
   background: #191765;
   margin: 0;
-  width: 1440px;
+  width: 100%;
   overflow-x: hidden;
   background-size: contain;
   animation-name: Body_change;
@@ -31,20 +31,20 @@ body {
   html {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    width: 375px;
+    width: 100%;
   }
 
   body {
     width: 100%;
-    margin: 0%;
+    margin: 0;
+    padding: 0;
     position: relative;
-    overflow: hidden;
     background-size: contain;
   }
 
   .mobile-container {
-    width: 375px;
+    width: 100%;
+    padding: 0;
   }
 
   .mobile-container .top_left {
@@ -56,17 +56,21 @@ body {
     background: #edecff;
     filter: blur(22px);
     border-radius: 50%;
+    margin: 0;
+    padding: 0;
   }
 
   .mobile-container .top_right {
     position: absolute;
     width: 80px;
     height: 80px;
-    top: 620px;
-    left: 340px;
+    top: 570px;
+    left: 380px;
     background: #edecff;
     filter: blur(20px);
     border-radius: 50%;
+    margin: 0;
+    padding: 0;
   }
 
   .mobile-container .top {
@@ -80,11 +84,23 @@ body {
     align-items: center;
     justify-items: center;
     letter-spacing: 0.03em;
-    width: 375px;
+    width: 100%;
+    gap: 210px;
   }
 
   .mobile-container .top .nav1 {
-    display: none;
+    position: fixed;
+    right: -100%;
+    flex-direction: column;
+    top: 40px;
+    gap: 0;
+    background-color: #191765;
+    width: 100%;
+    text-align: right;
+  }
+
+  .mobile-container .top .nav1.active {
+    left: 0;
   }
 
   .mobile-container .head {
@@ -94,13 +110,29 @@ body {
     flex-direction: column;
   }
 
-  .mobile-container .top .nav {
-    position: relative;
-    height: 20px;
-    width: 17.99px;
-    background: none;
-    left: 190px;
-    top: -15px;
+  .mobile-container .top .hamburger {
+    display: block;
+  }
+
+  .mobile-container .top .hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+  }
+
+  .mobile-container .top .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-container .top .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotateY(45deg);
+  }
+
+  .mobile-container .top .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotateY(-45deg);
   }
 
   .mobile-container .head .main_head {
@@ -128,8 +160,7 @@ body {
     line-height: 44px;
     color: #edecff;
     text-align: center;
-    position: relative;
-    left: 0;
+    margin-left: 0;
   }
 
   .mobile-container .head .main_text {
@@ -145,18 +176,18 @@ body {
     width: 300px;
     height: 170px;
     color: #c8c8d4;
-    position: relative;
-    left: 0;
+    margin-left: 0;
   }
 
   .mobile-container .head .divider {
-    display: flex;
+    position: absolute;
     width: 327px;
     height: 0;
     border: 1px solid #646369;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    top: 566px;
+    left: 40px;
   }
 
   .mobile-container .head .divider img {
@@ -268,12 +299,16 @@ body {
 }
 
 .mobile-container {
-  max-width: 1440px;
+  max-width: 100%;
   height: 4560px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+}
+
+.hamburger {
+  display: none;
 }
 
 .top_left {
@@ -292,7 +327,7 @@ body {
   width: 300px;
   height: 300px;
   top: 500px;
-  left: 1050px;
+  left: 1350px;
   background: #edecff;
   border-radius: 50%;
   filter: blur(50px);
@@ -315,7 +350,7 @@ body {
 .top .nav1 {
   display: flex;
   position: relative;
-  left: 1000px;
+  left: 1360px;
   gap: 15px;
   line-height: 16px;
 }
@@ -386,9 +421,7 @@ nav:hover {
   align-items: center;
   text-align: center;
   color: #dfe1e6;
-  position: relative;
-  left: 140px;
-  top: -40px;
+  margin-left: 170px;
 }
 
 .head .main_text {
@@ -403,9 +436,7 @@ nav:hover {
   width: 447px;
   height: 155px;
   color: #c8c8d4;
-  position: relative;
-  left: 90px;
-  top: -40px;
+  margin-left: 130px;
 }
 
 .divider img {
@@ -718,6 +749,7 @@ nav:hover {
     background: #edecff;
     filter: blur(20px);
     border-radius: 50%;
+    margin: 0;
     transform: matrix(-1, -0.1, -0.54, 0.84, 0, 0);
   }
 
@@ -731,6 +763,8 @@ nav:hover {
     border-radius: 50%;
     background: rgba(237, 236, 255, 0.3);
     filter: blur(30px);
+    margin: 0;
+    padding: 0;
   }
 
   .mobile-container .ellipse_22 {
@@ -744,6 +778,8 @@ nav:hover {
     filter: blur(30px);
     transform: matrix(-0.26, 0.77, 1, 0.4, 0, 0);
     border-radius: 50%;
+    margin: 0;
+    padding: 0;
   }
 
   .mobile-container .Project_work .workform1 .text {
@@ -1391,7 +1427,7 @@ nav:hover {
     border: none;
     outline: none;
     position: relative;
-    left: -10px;
+    left: 0;
     top: -380px;
     order: 0;
   }
@@ -1404,7 +1440,7 @@ nav:hover {
     border: none;
     outline: none;
     position: relative;
-    left: -10px;
+    left: 0;
     top: -350px;
     order: 0;
   }
@@ -1420,7 +1456,7 @@ nav:hover {
     outline: none;
     order: 0;
     position: relative;
-    left: -10px;
+    left: 0;
     top: -340px;
   }
 
@@ -1458,10 +1494,9 @@ nav:hover {
 
   .mobile-container .Contact-form .large_divider {
     position: absolute;
-    width: 375px;
+    width: 100%;
     height: 1px;
     background: #3a3837;
-    left: 0;
     top: 5400px;
     order: 0;
   }
@@ -1498,7 +1533,7 @@ nav:hover {
     background: #0d1513;
     border-radius: 10px;
     order: 0;
-    left: 125px;
+    left: 140px;
   }
 
   .mobile-container .Contact-form .email-link {
