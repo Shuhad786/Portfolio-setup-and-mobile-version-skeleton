@@ -1,13 +1,15 @@
 html {
-  width: 1440px;
-  overflow: visible;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 body {
   background: #191765;
   margin: 0;
-  width: 1440px;
-  overflow-x: hidden;
+  background-size: contain;
+  padding: 0;
+  width: 100%;
   animation-name: Body_change;
   animation-duration: 2s;
 }
@@ -26,26 +28,16 @@ body {
 
 /* My coding partners animation Body_change */
 
-@media only screen and (max-width: 768px) {
-  html {
+@media (max-width: 768px) {
+  html body {
     margin: 0;
     padding: 0;
-    overflow: visible;
-    width: 375px;
-    height: 4100px;
-  }
-
-  body {
-    width: 375px;
-    margin: 0%;
-    height: 4100px;
     position: relative;
-    overflow: visible;
   }
 
   .mobile-container {
-    width: 375px;
-    height: 5415px;
+    display: flex;
+    flex-direction: column;
   }
 
   .mobile-container .top_left {
@@ -57,21 +49,25 @@ body {
     background: #edecff;
     filter: blur(22px);
     border-radius: 50%;
+    margin: 0;
+    padding: 0;
   }
 
   .mobile-container .top_right {
     position: absolute;
     width: 80px;
     height: 80px;
-    top: 620px;
-    left: 340px;
+    top: 570px;
+    left: 350px;
     background: #edecff;
     filter: blur(20px);
     border-radius: 50%;
+    margin: 0;
+    padding: 0;
   }
 
   .mobile-container .top {
-    padding: 20px;
+    padding-top: 20px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-size: 18px;
@@ -81,10 +77,40 @@ body {
     align-items: center;
     justify-items: center;
     letter-spacing: 0.03em;
-    width: 375px;
+    width: 100%;
+    gap: 0;
   }
 
-  .mobile-container .top .nav1 {
+  .mobile-container .top .nav1 .nav-menu {
+    position: fixed;
+    display: flex;
+    top: 40px;
+    flex-direction: column;
+    text-align: left;
+    transition: 0.3s ease-in-out;
+    background-color: #191765;
+    width: 100%;
+    height: 100%;
+    gap: 60px;
+    left: -120%;
+  }
+
+  .mobile-container .top .nav1 .nav-link {
+    position: relative;
+    top: 40px;
+    font-size: 30px;
+  }
+
+  .mobile-container .top .nav1 .nav-menu.active {
+    left: 0%;
+    z-index: 1;
+    background-image: url(./images/shapes-menu.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+
+  .mobile-container .top .nav1 .nav-email {
     display: none;
   }
 
@@ -93,15 +119,34 @@ body {
     justify-items: center;
     align-items: center;
     flex-direction: column;
+    padding: 0;
+    margin: 0;
   }
 
-  .mobile-container .top .nav {
-    position: relative;
-    height: 20px;
-    width: 17.99px;
-    background: none;
-    left: 190px;
-    top: -15px;
+  .mobile-container .top .hamburger {
+    display: block;
+    margin-left: 200px;
+  }
+
+  .mobile-container .top .hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+  }
+
+  .mobile-container .top .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-container .top .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) skewY(45deg);
+  }
+
+  .mobile-container .top .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) skewY(-45deg);
   }
 
   .mobile-container .head .main_head {
@@ -129,8 +174,7 @@ body {
     line-height: 44px;
     color: #edecff;
     text-align: center;
-    position: relative;
-    left: 0;
+    margin-left: 0;
   }
 
   .mobile-container .head .main_text {
@@ -146,29 +190,32 @@ body {
     width: 300px;
     height: 170px;
     color: #c8c8d4;
-    position: relative;
-    left: 0;
+    margin-left: 0;
   }
 
   .mobile-container .head .divider {
-    display: flex;
+    position: absolute;
     width: 327px;
     height: 0;
     border: 1px solid #646369;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    top: 566px;
+    left: 25px;
   }
 
   .mobile-container .head .divider img {
     display: none;
   }
 
-  .mobile-container .head .language .list {
-    display: flex;
+  .mobile-container .head .language {
+    display: block;
     position: relative;
+    left: 40px;
+  }
+
+  .mobile-container .head .language .list {
     font-size: 20px;
-    left: -170px;
     color: #9490ff;
   }
 
@@ -182,43 +229,39 @@ body {
     color: #edecff;
   }
 
-  .mobile-container .head .framework .list {
-    display: flex;
-    font-size: 20px;
+  .mobile-container .head .framework {
     position: relative;
-    left: -200px;
-    top: 17px;
+    left: 70px;
+    top: -245px;
+  }
+
+  .mobile-container .head .framework .list {
+    font-size: 20px;
     color: #9490ff;
   }
 
   .mobile-container .head .framework li {
-    display: flex;
-    position: relative;
-    margin-top: 25px;
-    left: -200px;
-    top: 17px;
     font-size: 18px;
     list-style: none;
     color: #edecff;
   }
 
-  .mobile-container .head .skill .list {
+  .mobile-container .head .skill {
     position: relative;
+    left: -130px;
+    top: -230px;
+  }
+
+  .mobile-container .head .skill .list {
     color: #9490ff;
     font-size: 20px;
-    left: -126px;
-    top: 287px;
-    width: 1000px;
   }
 
   .mobile-container .head .skill li {
     margin-top: 25px;
-    position: relative;
-    left: -123px;
     font-size: 18px;
     list-style: none;
     color: #edecff;
-    top: 287px;
   }
 
   .mobile-container .head .divider2 {
@@ -266,21 +309,27 @@ body {
     left: 0;
     top: -100px;
   }
+
+  .mobile-container .head .work-icon2 {
+    display: none;
+  }
 }
 
 .mobile-container {
-  max-width: 1440px;
-  height: 4560px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
 
+.hamburger {
+  display: none;
+}
+
 .top_left {
   position: absolute;
-  width: 230px;
-  height: 230px;
+  width: 200px;
+  height: 200px;
   left: 2%;
   top: 237px;
   background: #edecff;
@@ -290,10 +339,10 @@ body {
 
 .top_right {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 230px;
+  height: 230px;
   top: 500px;
-  left: 1050px;
+  left: 80%;
   background: #edecff;
   border-radius: 50%;
   filter: blur(50px);
@@ -310,15 +359,22 @@ body {
   align-items: center;
   text-align: center;
   letter-spacing: 0.03em;
-  width: 100%;
+  gap: 1000px;
 }
 
-.top .nav1 {
+.top .nav1 .nav-menu {
   display: flex;
-  position: relative;
-  left: 1000px;
-  gap: 15px;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.top .nav1 .nav-item {
+  display: inline;
   line-height: 16px;
+  width: 100%;
+  list-style: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -387,9 +443,7 @@ nav:hover {
   align-items: center;
   text-align: center;
   color: #dfe1e6;
-  position: relative;
-  left: 140px;
-  top: -40px;
+  margin-left: 170px;
 }
 
 .head .main_text {
@@ -404,9 +458,7 @@ nav:hover {
   width: 447px;
   height: 155px;
   color: #c8c8d4;
-  position: relative;
-  left: 90px;
-  top: -40px;
+  margin-left: 130px;
 }
 
 .divider img {
@@ -414,12 +466,13 @@ nav:hover {
   position: relative;
   height: 0;
   border: 1px solid #646369;
-  left: 90px;
+  left: 130px;
 }
 
 .language {
+  display: block;
   position: relative;
-  left: 50px;
+  left: 90px;
 }
 
 .language .list {
@@ -440,8 +493,9 @@ nav:hover {
 }
 
 .framework {
+  display: block;
   position: relative;
-  left: 240px;
+  left: 280px;
   top: -258px;
 }
 
@@ -463,8 +517,9 @@ nav:hover {
 }
 
 .skill {
+  display: block;
   position: relative;
-  left: 450px;
+  left: 490px;
   top: -550px;
 }
 
@@ -491,7 +546,7 @@ nav:hover {
   position: relative;
   height: 0;
   border: 1px solid #646369;
-  left: 90px;
+  left: 130px;
   top: -540px;
 }
 
@@ -506,7 +561,7 @@ nav:hover {
   justify-content: center;
   position: relative;
   top: -450px;
-  left: -20px;
+  left: 0;
   gap: 21px;
 }
 
@@ -555,16 +610,17 @@ nav:hover {
 
 @media screen and (max-width: 768px) {
   .mobile-container .Project_work {
-    width: 375px;
-    position: relative;
+    display: block;
+    flex-direction: column;
+    margin: 0%;
+    padding: 0%;
   }
 
   .mobile-container .Project_work .work {
-    position: relative;
+    width: 300px;
     justify-content: center;
     align-items: center;
     color: #9490ff;
-    width: 327px;
     height: 104px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -572,37 +628,29 @@ nav:hover {
     font-size: 40px;
     line-height: 52px;
     order: 0;
-    left: -100px;
-    top: 400px;
+    margin-left: 60px;
   }
 
   .mobile-container .Project_work .divider {
-    position: relative;
-    top: 400px;
     width: 327px;
     height: 0;
     border: 1px solid #646369;
     justify-content: center;
     align-items: center;
     order: 0;
-    left: -100px;
+    margin-left: 60px;
   }
 
   .mobile-container .Project_work .workform1 .Placeholder {
     order: 0;
-    position: relative;
-    left: -100px;
     width: 327px;
     height: 236px;
-    top: 400px;
     background: linear-gradient(0deg, white, white);
+    margin-left: 60px;
   }
 
   .mobile-container .Project_work .workform2 .Placeholder {
     order: 0;
-    position: relative;
-    top: 760px;
-    left: -100px;
     width: 327px;
     height: 236px;
     background: linear-gradient(0deg, white, white);
@@ -610,9 +658,6 @@ nav:hover {
 
   .mobile-container .Project_work .workform3 .Placeholder {
     order: 0;
-    position: relative;
-    top: 1100px;
-    left: -100px;
     width: 327px;
     height: 236px;
     background: linear-gradient(0deg, white, white);
@@ -620,80 +665,271 @@ nav:hover {
 
   .mobile-container .Project_work .workform4 .Placeholder {
     order: 0;
-    position: relative;
-    left: -100px;
-    top: 1440px;
     width: 327px;
     height: 236px;
     background: linear-gradient(0deg, white, white);
   }
 
+  .mobile-container .Project_work .workform1 {
+    display: block;
+    margin-left: 0%;
+  }
+
+  .mobile-container .Project_work .workform1 .workplace1 {
+    display: block;
+    margin-left: 0%;
+  }
+
   .mobile-container .Project_work .workform1 .posted {
     order: 0;
-    display: flex;
-    width: 1000px;
-    height: 105px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 32px;
     line-height: 44px;
+    color: rgb(255, 255, 255);
+    padding: 0%;
+    margin-left: 15%;
+  }
+
+  .mobile-container .Project_work .workform1 .text {
+    order: 0;
+    width: 320px;
+    height: 204px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 28px;
+    color: #dcdce8;
+    margin-top: -70px;
+    margin-left: 15%;
+  }
+
+  .mobile-container .Project_work .workform1 .techstack {
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    color: white;
-    position: relative;
-    top: 370px;
-    left: -100px;
+    justify-content: space-around;
+    list-style: none;
+    color: #fff;
+    margin-left: 60px;
+    width: 200px;
+  }
+
+  .mobile-container .Project_work .workform1 .techstack img {
+    width: 1px;
+    height: 40px;
+    background: #555;
+    margin: 0%;
+  }
+
+  .mobile-container .Project_work .workform1 button {
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    width: 89px;
+    height: 48px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #edecff;
+    background-color: #7d73fc;
+    border: none;
+    margin-top: 30px;
+    margin-left: 60px;
+  }
+
+  .mobile-container .Project_work .workform2 {
+    display: block;
+  }
+
+  .mobile-container .Project_work .workform2 .workplace2 {
+    display: block;
+    margin-top: 20px;
   }
 
   .mobile-container .Project_work .workform2 .posted {
     order: 0;
-    display: flex;
-    width: 327px;
-    height: 105px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 32px;
     line-height: 44px;
-    align-items: center;
     color: white;
-    position: relative;
-    top: 730px;
-    left: -100px;
+    margin-top: 20px;
+  }
+
+  .mobile-container .Project_work .workform2 .text {
+    order: 0;
+    width: 327px;
+    height: 204px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 28px;
+    color: #dcdce8;
+    margin-top: 30px;
+  }
+
+  .mobile-container .Project_work .workform2 .techstack {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    color: #fff;
+  }
+
+  .mobile-container .Project_work .workform2 .techstack img {
+    width: 1px;
+    height: 40px;
+    background: #555;
+  }
+
+  .mobile-container .Project_work .workform2 button {
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    width: 89px;
+    height: 48px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #edecff;
+    background-color: #7d73fc;
+    border: none;
+    margin-top: 30px;
+  }
+
+  .mobile-container .Project_work .workform3 {
+    display: block;
+  }
+
+  .mobile-container .Project_work .workform3 .workplace3 {
+    display: block;
+    margin-left: 0%;
   }
 
   .mobile-container .Project_work .workform3 .posted {
     order: 0;
-    display: flex;
-    width: 327px;
-    height: 105px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 32px;
     line-height: 44px;
-    align-items: center;
     color: white;
-    position: relative;
-    top: 1070px;
-    left: -100px;
+    margin-top: 30px;
+  }
+
+  .mobile-container .Project_work .workform3 .text {
+    order: 0;
+    width: 327px;
+    height: 204px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 28px;
+    color: #dcdce8;
+    margin-top: 30px;
+  }
+
+  .mobile-container .Project_work .workform3 .techstack {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    color: #fff;
+  }
+
+  .mobile-container .Project_work .workform3 .techstack img {
+    width: 1px;
+    height: 40px;
+    background: #555;
+  }
+
+  .mobile-container .Project_work .workform3 button {
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    width: 89px;
+    height: 48px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #edecff;
+    background-color: #7d73fc;
+    border: none;
+    margin-top: 30px;
+  }
+
+  .mobile-container .Project_work .workform4 {
+    display: block;
   }
 
   .mobile-container .Project_work .workform4 .posted {
     order: 0;
-    display: flex;
-    width: 327px;
-    height: 105px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 32px;
     line-height: 44px;
-    align-items: center;
     color: white;
-    position: relative;
-    top: 1410px;
-    left: -100px;
+    margin-top: 30px;
+  }
+
+  .mobile-container .Project_work .workform4 .text {
+    order: 0;
+    width: 327px;
+    height: 204px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 28px;
+    color: #dcdce8;
+    margin-top: 20px;
+  }
+
+  .mobile-container .Project_work .workform4 .techstack {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    color: #fff;
+  }
+
+  .mobile-container .Project_work .workform4 .techstack img {
+    width: 1px;
+    height: 40px;
+    background: #555;
+  }
+
+  .mobile-container .Project_work .workform4 button {
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    width: 89px;
+    height: 48px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    color: #edecff;
+    background-color: #7d73fc;
+    margin-top: 30px;
+    border: none;
   }
 
   .mobile-container .ellipse_19 {
@@ -719,6 +955,8 @@ nav:hover {
     background: #edecff;
     filter: blur(20px);
     border-radius: 50%;
+    margin: 0;
+    padding: 0;
     transform: matrix(-1, -0.1, -0.54, 0.84, 0, 0);
   }
 
@@ -732,246 +970,30 @@ nav:hover {
     border-radius: 50%;
     background: rgba(237, 236, 255, 0.3);
     filter: blur(30px);
+    margin: 0;
+    padding: 0;
   }
 
   .mobile-container .ellipse_22 {
     order: 0;
     position: absolute;
     width: 120px;
-    height: 377.04px;
-    left: 370px;
+    height: 140px;
+    left: 300px;
     top: 4050px;
     background: #edecff;
     filter: blur(30px);
     transform: matrix(-0.26, 0.77, 1, 0.4, 0, 0);
     border-radius: 50%;
+    margin: 0;
+    padding: 0;
   }
-
-  .mobile-container .Project_work .workform1 .text {
-    order: 0;
-    width: 320px;
-    height: 204px;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400px;
-    font-size: 20px;
-    line-height: 28px;
-    color: #dcdce8;
-    position: relative;
-    left: -100px;
-    top: 350px;
-  }
-
-  .mobile-container .Project_work .workform2 .text {
-    order: 0;
-    width: 327px;
-    height: 204px;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400px;
-    font-size: 20px;
-    line-height: 28px;
-    color: #dcdce8;
-    position: relative;
-    top: 710px;
-    left: -100px;
-  }
-
-  .mobile-container .Project_work .workform3 .text {
-    order: 0;
-    width: 327px;
-    height: 204px;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400px;
-    font-size: 20px;
-    line-height: 28px;
-    color: #dcdce8;
-    position: relative;
-    top: 1050px;
-    left: -100px;
-  }
-
-  .mobile-container .Project_work .workform4 .text {
-    order: 0;
-    width: 327px;
-    height: 204px;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400px;
-    font-size: 20px;
-    line-height: 28px;
-    color: #dcdce8;
-    position: relative;
-    top: 1390px;
-    left: -100px;
-  }
-
-  .mobile-container .Project_work .workform1 .techstack {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    list-style: none;
-    color: #fff;
-    position: relative;
-    top: 350px;
-    left: -140px;
-  }
-
-  .mobile-container .Project_work .workform1 .techstack img {
-    width: 1px;
-    height: 40px;
-    background: #555;
-  }
-
-  .mobile-container .Project_work .workform2 .techstack {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    list-style: none;
-    color: #fff;
-    position: relative;
-    top: 690px;
-    left: -140px;
-  }
-
-  .mobile-container .Project_work .workform2 .techstack img {
-    width: 1px;
-    height: 40px;
-    background: #555;
-  }
-
-  .mobile-container .Project_work .workform3 .techstack {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    list-style: none;
-    color: #fff;
-    position: relative;
-    top: 1030px;
-    left: -140px;
-  }
-
-  .mobile-container .Project_work .workform3 .techstack img {
-    width: 1px;
-    height: 40px;
-    background: #555;
-  }
-
-  .mobile-container .Project_work .workform4 .techstack {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    list-style: none;
-    color: #fff;
-    position: relative;
-    top: 1370px;
-    left: -140px;
-  }
-
-  .mobile-container .Project_work .workform4 .techstack img {
-    width: 1px;
-    height: 40px;
-    background: #555;
-  }
-
-  .mobile-container .Project_work .workform1 button {
-    display: inline-block;
-    align-items: center;
-    text-align: center;
-    width: 89px;
-    height: 48px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 24px;
-    color: #edecff;
-    background-color: #7d73fc;
-    position: relative;
-    left: -120px;
-    top: 370px;
-    border: none;
-  }
-
-  .mobile-container .Project_work .workform2 button {
-    display: inline-block;
-    align-items: center;
-    text-align: center;
-    width: 89px;
-    height: 48px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 24px;
-    color: #edecff;
-    background-color: #7d73fc;
-    position: relative;
-    top: 710px;
-    left: -120px;
-    border: none;
-  }
-
-  .mobile-container .Project_work .workform3 button {
-    display: inline-block;
-    align-items: center;
-    text-align: center;
-    width: 89px;
-    height: 48px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 24px;
-    color: #edecff;
-    background-color: #7d73fc;
-    position: relative;
-    left: -120px;
-    top: 1050px;
-    border: none;
-  }
-
-  .mobile-container .Project_work .workform4 button {
-    display: inline-block;
-    align-items: center;
-    text-align: center;
-    width: 89px;
-    height: 48px;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 24px;
-    color: #edecff;
-    background-color: #7d73fc;
-    position: relative;
-    top: 1390px;
-    left: -120px;
-    border: none;
-  }
-}
-
-.Project_work {
-  width: 1440px;
-  position: relative;
-  top: -500px;
-  left: 120px;
-}
-
-.workform1 {
-  margin-bottom: -380px;
 }
 
 .Project_work .work {
   justify-content: center;
   align-items: center;
   color: #9490ff;
-  width: 100%;
   height: 114px;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -983,7 +1005,6 @@ nav:hover {
 
 .Project_work .divider {
   position: relative;
-  width: 1156px;
   height: 0;
   border: 1px solid #646369;
   justify-content: center;
@@ -992,14 +1013,23 @@ nav:hover {
   order: 0;
 }
 
+.Project_work .workform1 {
+  display: flex;
+}
+
 .Project_work .workform1 .Placeholder {
   width: 684px;
   height: 448px;
 }
 
+.Project_work .workform1 .workplace1 {
+  display: block;
+  margin-left: 30px;
+  margin-bottom: 50px;
+}
+
 .Project_work .workform1 .posted {
   order: 0;
-  position: relative;
   width: 448px;
   height: 105px;
   font-family: 'Roboto', sans-serif;
@@ -1009,13 +1039,10 @@ nav:hover {
   line-height: 200px;
   align-items: center;
   color: #fff;
-  left: 700px;
-  top: -500px;
 }
 
 .Project_work .workform1 .text {
   order: 0;
-  position: relative;
   width: 448px;
   height: 140px;
   font-family: 'Roboto', sans-serif;
@@ -1024,15 +1051,10 @@ nav:hover {
   font-size: 20px;
   line-height: 28px;
   color: #dfe1e6;
-  left: 700px;
-  top: -490px;
 }
 
 .Project_work .workform1 .techstack {
   display: flex;
-  position: relative;
-  left: 670px;
-  top: -470px;
   flex-direction: row;
   align-items: center;
   gap: 20px;
@@ -1048,9 +1070,6 @@ nav:hover {
 
 .Project_work .workform1 button {
   display: inline-block;
-  position: relative;
-  left: 680px;
-  top: -460px;
   align-items: center;
   text-align: center;
   width: 89px;
@@ -1067,23 +1086,22 @@ nav:hover {
   border: none;
 }
 
-.workform2 {
-  margin-bottom: -380px;
+.Project_work .workform2 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.Project_work .workform2 .workplace2 {
+  display: block;
 }
 
 .Project_work .workform2 .Placeholder {
   width: 684px;
   height: 448px;
-  position: relative;
-  left: 473px;
-  top: -1px;
 }
 
 .Project_work .workform2 .posted {
   order: 0;
-  position: relative;
-  width: 448px;
-  height: 105px;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -1091,12 +1109,14 @@ nav:hover {
   line-height: 200px;
   align-items: center;
   color: #fff;
-  top: -500px;
+  margin: 0%;
+  padding: 0%;
 }
 
 .Project_work .workform2 .text {
   order: 0;
-  position: relative;
+  margin: 0%;
+  padding: 0%;
   width: 448px;
   height: 140px;
   font-family: 'Roboto', sans-serif;
@@ -1105,26 +1125,20 @@ nav:hover {
   font-size: 20px;
   line-height: 28px;
   color: #dfe1e6;
-  top: -490px;
 }
 
 .Project_work .workform2 .techstack {
   display: flex;
-  position: relative;
-  left: -20px;
-  top: -470px;
   flex-direction: row;
   align-items: center;
   gap: 20px;
   list-style: none;
   color: #fff;
+  padding: 0%;
 }
 
 .Project_work .workform2 button {
   display: inline-block;
-  position: relative;
-  top: -460px;
-  left: -20px;
   align-items: center;
   text-align: center;
   width: 89px;
@@ -1136,13 +1150,12 @@ nav:hover {
   line-height: 24px;
   color: #edecff;
   background-color: #7d73fc;
-  margin-bottom: 40px;
-  margin-left: 20px;
   border: none;
 }
 
-.workform3 {
-  margin-bottom: -380px;
+.Project_work .workform3 {
+  display: flex;
+  margin: 100px;
 }
 
 .Project_work .workform3 .Placeholder {
@@ -1150,11 +1163,15 @@ nav:hover {
   height: 448px;
 }
 
+.Project_work .workform3 .workplace3 {
+  display: block;
+  margin-left: 30px;
+}
+
 .Project_work .workform3 .posted {
   order: 0;
-  position: relative;
-  width: 448px;
-  height: 105px;
+  margin: 0%;
+  padding: 0%;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -1162,13 +1179,10 @@ nav:hover {
   line-height: 200px;
   align-items: center;
   color: #fff;
-  left: 700px;
-  top: -500px;
 }
 
 .Project_work .workform3 .text {
   order: 0;
-  position: relative;
   width: 448px;
   height: 140px;
   font-family: 'Roboto', sans-serif;
@@ -1177,27 +1191,22 @@ nav:hover {
   font-size: 20px;
   line-height: 28px;
   color: #dfe1e6;
-  left: 700px;
-  top: -490px;
+  margin: 0;
+  padding: 0%;
 }
 
 .Project_work .workform3 .techstack {
   display: flex;
-  position: relative;
-  left: 670px;
-  top: -470px;
   flex-direction: row;
   align-items: center;
   gap: 20px;
   list-style: none;
   color: #fff;
+  padding: 0%;
 }
 
 .Project_work .workform3 button {
   display: inline-block;
-  position: relative;
-  left: 680px;
-  top: -460px;
   align-items: center;
   text-align: center;
   width: 89px;
@@ -1209,41 +1218,39 @@ nav:hover {
   line-height: 24px;
   color: #edecff;
   background-color: #7d73fc;
-  margin-bottom: 40px;
-  margin-left: 20px;
   border: none;
 }
 
-.workform4 {
-  margin-bottom: -380px;
+.Project_work .workform4 {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 100px;
+  align-items: center;
+}
+
+.Project_work .workform4 .workplace4 {
+  display: block;
 }
 
 .Project_work .workform4 .Placeholder {
   width: 684px;
   height: 448px;
-  position: relative;
-  left: 473px;
-  top: -1px;
 }
 
 .Project_work .workform4 .posted {
   order: 0;
-  position: relative;
-  width: 448px;
-  height: 105px;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
   line-height: 200px;
-  align-items: center;
   color: #fff;
-  top: -500px;
+  margin: 0%;
+  padding: 0%;
 }
 
 .Project_work .workform4 .text {
   order: 0;
-  position: relative;
   width: 448px;
   height: 140px;
   font-family: 'Roboto', sans-serif;
@@ -1252,26 +1259,23 @@ nav:hover {
   font-size: 20px;
   line-height: 28px;
   color: #dfe1e6;
-  top: -490px;
+  margin: 0;
+  padding: 0;
 }
 
 .Project_work .workform4 .techstack {
   display: flex;
-  position: relative;
-  left: -20px;
-  top: -470px;
   flex-direction: row;
   align-items: center;
   gap: 20px;
   list-style: none;
   color: #fff;
+  padding: 0%;
+  margin: 0%;
 }
 
 .Project_work .workform4 button {
   display: inline-block;
-  position: relative;
-  top: -460px;
-  left: -20px;
   align-items: center;
   text-align: center;
   width: 89px;
@@ -1283,40 +1287,40 @@ nav:hover {
   line-height: 24px;
   color: #edecff;
   background-color: #7d73fc;
-  margin-bottom: 40px;
-  margin-left: 20px;
   border: none;
 }
 
 .ellipse_19 {
   position: absolute;
-  width: 50px;
-  height: 1200px;
-  left: -100px;
-  top: 800px;
+  width: 80px;
+  height: 600px;
+  left: 0%;
+  top: 1870px;
   background: #edecff;
   filter: blur(20px);
   border-radius: 50%;
   transform: rotate(-36.38deg);
+  z-index: -1;
 }
 
 .ellipse_20 {
   position: absolute;
   width: 108px;
   height: 402px;
-  left: 1280px;
-  top: 2070px;
+  left: 100%;
+  top: 3300px;
   background: #edecff;
   filter: blur(40px);
   border-radius: 50%;
   transform: matrix(-0.84, -0.54, -0.54, 0.84, 0, 0);
+  z-index: -1;
 }
 
 .ellipse_21 {
   position: absolute;
   width: 308px;
   height: 155px;
-  left: -40px;
+  left: -10%;
   top: 2700px;
   background: #edecff;
   filter: blur(40px);
@@ -1325,9 +1329,9 @@ nav:hover {
 
 .ellipse_22 {
   position: absolute;
-  width: 246.19px;
-  height: 916.38px;
-  left: 1350px;
+  width: 200.19px;
+  height: 716.38px;
+  left: 80%;
   top: 2620px;
   border-radius: 60%;
   background: #edecff;
@@ -1337,8 +1341,6 @@ nav:hover {
 
 @media screen and (max-width: 768px) {
   .mobile-container .Contact-form h2 {
-    width: 327px;
-    height: 35px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -1346,9 +1348,6 @@ nav:hover {
     line-height: 44px;
     display: flex;
     flex-direction: column;
-    position: relative;
-    top: 1200px;
-    left: 0;
     align-items: center;
     text-align: center;
     color: #9390ff;
@@ -1366,9 +1365,6 @@ nav:hover {
     text-align: center;
     color: #f5f5ff;
     order: 0;
-    position: relative;
-    top: 1190px;
-    left: 0;
   }
 
   .mobile-container .form-info {
@@ -1376,8 +1372,6 @@ nav:hover {
     flex-direction: column;
     text-align: center;
     order: 0;
-    position: relative;
-    top: 1600px;
   }
 
   .mobile-container .Contact-form .form-info .Name {
@@ -1391,9 +1385,6 @@ nav:hover {
     padding-left: 10px;
     border: none;
     outline: none;
-    position: relative;
-    left: -10px;
-    top: -380px;
     order: 0;
   }
 
@@ -1404,9 +1395,6 @@ nav:hover {
     padding-left: 10px;
     border: none;
     outline: none;
-    position: relative;
-    left: -10px;
-    top: -350px;
     order: 0;
   }
 
@@ -1420,9 +1408,6 @@ nav:hover {
     border: none;
     outline: none;
     order: 0;
-    position: relative;
-    left: -10px;
-    top: -340px;
   }
 
   .mobile-container .form-info textarea:invalid {
@@ -1431,7 +1416,6 @@ nav:hover {
 
   .mobile-container .Contact-form .button {
     display: inline-block;
-    position: relative;
     align-items: center;
     text-align: center;
     width: 89px;
@@ -1443,8 +1427,6 @@ nav:hover {
     line-height: 24px;
     color: #edecff;
     background-color: #7d73fc;
-    left: 130px;
-    top: -300px;
     border: none;
     transition: 2s;
     cursor: pointer;
@@ -1459,54 +1441,36 @@ nav:hover {
 
   .mobile-container .Contact-form .large_divider {
     position: absolute;
-    width: 375px;
+    width: 100%;
     height: 1px;
     background: #3a3837;
-    left: 0;
-    top: 5400px;
+    top: 5800px;
     order: 0;
   }
 
   .mobile-container .Contact-form .icons-bottom {
-    display: flex;
-    flex-direction: row;
-    float: inline-start;
-    justify-content: center;
-    position: relative;
-    left: 170px;
-    top: 1400px;
+    display: block;
+    text-align: center;
     order: 0;
+    margin-bottom: 60px;
   }
 
-  .mobile-container .Contact-form .icons img {
+  .mobile-container .Contact-form .icons-bottom img {
     height: 20px;
     width: 17.99px;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    order: 0;
-    position: relative;
   }
 
-  .Contact-form .indicator {
+  .mobile-container .Contact-form .indicator {
     position: absolute;
-    top: 5610px;
     width: 134px;
     height: 5px;
     bottom: 8px;
     background: #0d1513;
     border-radius: 10px;
     order: 0;
-    left: 125px;
   }
 
   .mobile-container .Contact-form .email-link {
-    position: relative;
-    left: 5px;
-    top: 1460px;
-    width: 100%;
     height: 29px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -1522,12 +1486,11 @@ nav:hover {
 .Contact-form {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
   align-items: center;
+  gap: 100px;
 }
 
 .Contact-form h2 {
-  width: 684px;
   height: 56px;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -1537,14 +1500,10 @@ nav:hover {
   align-items: center;
   text-align: center;
   color: #9390ff;
-  position: relative;
-  top: -500px;
-  left: -20px;
   order: 0;
 }
 
 .Contact-form p {
-  width: 684px;
   height: 61px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
@@ -1553,34 +1512,27 @@ nav:hover {
   line-height: 28px;
   text-align: center;
   color: #f5f5ff;
-  position: relative;
-  top: -500px;
-  left: -20px;
   order: 0;
 }
 
-.form {
+.form-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 60px;
+  justify-content: center;
   order: 0;
   gap: 25px;
 }
 
 .form-info .Name {
   display: flex;
-  position: relative;
-  left: 340px;
-  top: -420px;
-  width: 700px;
   height: 48px;
   margin-bottom: 24px;
   border-radius: 2px;
   padding-left: 10px;
   outline: none;
   gap: 20px;
-  order: 0;
+  width: 700px;
 }
 
 .form-info input:required {
@@ -1588,18 +1540,6 @@ nav:hover {
   height: 48px;
   border-radius: 2px;
   padding: 10px;
-}
-
-.form-info .email {
-  position: relative;
-  top: -395px;
-  left: 340px;
-}
-
-.form-info .textareabox {
-  position: relative;
-  top: -390px;
-  left: 340px;
 }
 
 .form-info textarea:required {
@@ -1629,9 +1569,6 @@ nav:hover {
   transition: 0.5s;
   cursor: pointer;
   order: 0;
-  position: relative;
-  top: -250px;
-  left: -100px;
 }
 
 .button:hover {
@@ -1643,17 +1580,16 @@ nav:hover {
 .Contact-form .large-divider {
   position: absolute;
   top: 4700px;
-  width: 1440px;
   height: 1px;
   background: #3a3837;
-  order: 0;
-  left: -100px;
+}
+
+.Contact-form .icons-bottom {
+  display: flex;
+  justify-content: space-between;
 }
 
 .Contact-form .email-link {
-  position: relative;
-  left: 100px;
-  width: 221px;
   height: 29px;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -1663,12 +1599,10 @@ nav:hover {
   text-align: center;
   color: white;
   order: 0;
+  margin-left: 40px;
 }
 
 .Contact-form .icons-bottom img {
-  position: relative;
-  top: 30px;
-  left: -180px;
   height: 20px;
   width: 17.99px;
   margin-left: 30px;
