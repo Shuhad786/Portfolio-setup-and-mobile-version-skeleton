@@ -58,7 +58,7 @@ body {
     width: 80px;
     height: 80px;
     top: 570px;
-    left: 350px;
+    left: 100%;
     background: #edecff;
     filter: blur(20px);
     border-radius: 50%;
@@ -359,19 +359,27 @@ body {
   align-items: center;
   text-align: center;
   letter-spacing: 0.03em;
-  gap: 1000px;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.top .nav1 .nav-menu {
+.nav1 {
   display: flex;
   width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 40px;
+}
+
+.nav-menu {
+  display: flex;
   text-align: center;
   align-items: center;
   gap: 25px;
 }
 
-.top .nav1 .nav-item {
-  display: inline;
+.nav-item {
   line-height: 16px;
   width: 100%;
   list-style: none;
