@@ -13,13 +13,13 @@ if (!localStorage.getItem('formObj')) {
 }
 
 const reservedata = (element, val) => {
-    element.addEventListener('change', () => {
-  const data = element.value;
+  element.addEventListener('change', () => {
+    const data = element.value;
     const formData = JSON.parse(localStorage.getItem('formObj'));
     formData[val] = data;
     localStorage.setItem('formObj', JSON.stringify(formData));
-});
-  };
+  });
+};
 
 reservedata(fname, 'fnameData');
 reservedata(lname, 'lnameData');
