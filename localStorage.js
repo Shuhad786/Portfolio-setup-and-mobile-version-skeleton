@@ -23,9 +23,4 @@ reservedata(name, 'nameData')
 reservedata(email, 'emailData')
 reservedata(messagebox, 'messageData')
 
-const formData = JSON.parse(localStorage.getItem('formObj'));
-fname.value = formData.fnameData;
-lname.value = formData.lnameData;
-email.value = formData.emailData;
-name.value = formData.nameData;
-messagebox.textContent = formData.messageData;
+
