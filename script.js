@@ -18,6 +18,31 @@ document.querySelectorAll('.nav-link').forEach((n) => n.addEventListener('click'
   navMenu.classList.remove('active');
 }));
 
+popupopen.addEventListener('click', () => {
+  popupwindow.classList.toggle('show');
+  maincontainer.style.filter = 'blur(50px)';
+});
+
+popupopen2.addEventListener('click', () => {
+  popupwindow.classList.toggle('show');
+  maincontainer.style.filter = 'blur(10px)';
+});
+
+popupopen3.addEventListener('click', () => {
+  popupwindow.classList.toggle('show');
+  maincontainer.style.filter = 'blur(10px)';
+});
+
+popupopen4.addEventListener('click', () => {
+  popupwindow.classList.toggle('show');
+  maincontainer.style.filter = 'blur(10px)';
+});
+
+popupclose.addEventListener('click', () => {
+  popupwindow.classList.remove('show');
+  maincontainer.style.filter = 'blur(0px)';
+});
+
 const PopupArray = [{
   title: 'Multi-Post Stories',
   img: './images/projectImg.png',
@@ -125,29 +150,4 @@ for (let i = 0; i < PopupArray.length; i += 1) {
   ContainerPopup.appendChild(card).appendChild(btn1);
   ContainerPopup.appendChild(card).appendChild(btn2);
   ContainerPopup.appendChild(card).appendChild(btnRow);
-
-  popupopen.addEventListener('click', () => {
-    popupwindow.classList.toggle('show');
-    maincontainer.style.filter = 'blur(50px)';
-  });
-
-  popupopen2.addEventListener('click', () => {
-    popupwindow.classList.toggle('show');
-    maincontainer.style.filter = 'blur(10px)';
-  });
-
-  popupopen3.addEventListener('click', () => {
-    popupwindow.classList.toggle('show');
-    maincontainer.style.filter = 'blur(10px)';
-  });
-
-  popupopen4.addEventListener('click', () => {
-    popupwindow.classList.toggle('show');
-    maincontainer.style.filter = 'blur(10px)';
-  });
-
-  popupclose.addEventListener('click', () => {
-    popupwindow.classList.remove('show');
-    maincontainer.style.filter = 'blur(0px)';
-  });
 }
