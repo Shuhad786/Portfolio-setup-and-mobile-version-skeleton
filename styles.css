@@ -732,7 +732,7 @@ nav:hover {
     margin: 0%;
   }
 
-  .mobile-container .Project_work .workform1 button {
+  .mobile-container .Project_work .workform1 .button {
     display: inline-block;
     align-items: center;
     text-align: center;
@@ -798,7 +798,7 @@ nav:hover {
     background: #555;
   }
 
-  .mobile-container .Project_work .workform2 button {
+  .mobile-container .Project_work .workform2 .button2 {
     display: inline-block;
     align-items: center;
     text-align: center;
@@ -863,7 +863,7 @@ nav:hover {
     background: #555;
   }
 
-  .mobile-container .Project_work .workform3 button {
+  .mobile-container .Project_work .workform3 .button3 {
     display: inline-block;
     align-items: center;
     text-align: center;
@@ -923,7 +923,7 @@ nav:hover {
     background: #555;
   }
 
-  .mobile-container .Project_work .workform4 button {
+  .mobile-container .Project_work .workform4 .button4 {
     display: inline-block;
     align-items: center;
     text-align: center;
@@ -1732,6 +1732,11 @@ nav:hover {
     height: 40px;
   }
 
+  .btn1 img {
+    height: 22px;
+    width: 22px;
+  }
+
   .btn1 {
     display: flex;
     margin-left: 180px;
@@ -1742,6 +1747,11 @@ nav:hover {
     height: 60px;
     background-color: #7d73fc;
     color: #fff;
+  }
+
+  .btn2 img {
+    height: 18px;
+    width: 18px;
   }
 
   .btn2 {
@@ -1776,6 +1786,7 @@ nav:hover {
     opacity: 0;
     pointer-events: none;
     width: 1156px;
+    height: 1176px;
   }
 
   .popup-container.show {
@@ -1911,10 +1922,14 @@ nav:hover {
 
   .btn-row .btn1 img {
     margin-left: 20px;
+    height: 22px;
+    width: 22px;
   }
 
   .btn-row .btn2 img {
     margin-left: 20px;
+    height: 18px;
+    width: 18px;
   }
 
   .btn-row .btn2 {
