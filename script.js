@@ -119,18 +119,34 @@ for (let i = 0; i < PopupArray.length; i += 1) {
   const imageLive = document.createElement('img');
   imageLive.src = PopupArray[i].button1Img;
 
+  const imageLive2 = document.createElement('img');
+  imageLive2.src = PopupArray[i].button1Img;
+
   const btn1 = document.createElement('button');
   btn1.classList.add('btn1');
   btn1.innerHTML = PopupArray[i].button1;
   btn1.appendChild(imageLive);
 
+  const btn3 = document.createElement('button');
+  btn3.classList.add('btn1');
+  btn3.innerHTML = PopupArray[i].button1;
+  btn3.appendChild(imageLive2);
+
   const imageSource = document.createElement('img');
   imageSource.src = PopupArray[i].button2Img;
+
+  const imageSource2 = document.createElement('img');
+  imageSource2.src = PopupArray[i].button2Img;
 
   const btn2 = document.createElement('button');
   btn2.classList.add('btn2');
   btn2.innerHTML = PopupArray[i].button2;
   btn2.appendChild(imageSource);
+
+  const btn4 = document.createElement('button');
+  btn4.classList.add('btn2');
+  btn4.innerHTML = PopupArray[i].button2;
+  btn4.appendChild(imageSource2);
 
   const btnRow = document.createElement('div');
   btnRow.classList.add('btn-row');
@@ -150,8 +166,8 @@ for (let i = 0; i < PopupArray.length; i += 1) {
   ContainerPopup.appendChild(card).appendChild(ul).appendChild(li7);
   ContainerPopup.appendChild(card).appendChild(ul).appendChild(li8);
   ContainerPopup.appendChild(card).appendChild(ul).appendChild(li9);
-  ContainerPopup.appendChild(card).appendChild(btn1);
-  ContainerPopup.appendChild(card).appendChild(btn2);
+  ContainerPopup.appendChild(card).appendChild(btn3);
+  ContainerPopup.appendChild(card).appendChild(btn4);
   ContainerPopup.appendChild(card).appendChild(btnRow).appendChild(btn1);
   ContainerPopup.appendChild(card).appendChild(btnRow).appendChild(btn2);
 }
