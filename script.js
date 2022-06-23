@@ -8,8 +8,6 @@ const popupwindow = document.querySelector('.popup-container');
 const popupclose = document.querySelector('.popup-close');
 const maincontainer = document.querySelector('.mobile-container');
 
-
-
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   navMenu.classList.toggle('active');
