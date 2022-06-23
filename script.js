@@ -1,3 +1,20 @@
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+const popupopen = document.querySelector('.button');
+const popupopen2 = document.querySelector('.button2');
+const popupopen3 = document.querySelector('.button3');
+const popupopen4 = document.querySelector('.button4');
+const maincontainer = document.querySelector('.mobile-container');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-link').forEach((n) => n.addEventListener('click', () => {
+  hamburger.classList.remove('active');
+  navMenu.classList.remove('active');
+}));
 
 const PopupArray = [{
   title: 'Multi-Post Stories',
