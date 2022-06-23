@@ -1,21 +1,3 @@
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const popupopen = document.querySelector('.button');
-const popupopen2 = document.querySelector('.button2');
-const popupopen3 = document.querySelector('.button3');
-const popupopen4 = document.querySelector('.button4');
-
-const maincontainer = document.querySelector('.mobile-container');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navMenu.classList.toggle('active');
-});
-
-document.querySelectorAll('.nav-link').forEach((n) => n.addEventListener('click', () => {
-  hamburger.classList.remove('active');
-  navMenu.classList.remove('active');
-}));
 
 const PopupArray = [{
   title: 'Multi-Post Stories',
@@ -26,6 +8,10 @@ const PopupArray = [{
   techstack2: 'Ruby on rails',
   techstack3: 'css',
   techstack4: 'Github',
+  button1: 'See Live',
+  button2: 'See Source',
+  button1Img: './images/SeeLive.png',
+  button2Img: './images/SeeSource.png'
 }];
 
 const ContainerPopup = document.querySelector('.popup');
@@ -113,11 +99,22 @@ for (let i = 0; i < PopupArray.length; i += 1) {
   li9.classList.add('Git');
   li9.appendChild(imageDivider5);
 
+  const imageLive = document.createElement('img');
+  imageLive.src = PopupArray[i].button1Img;  
+
   const btn1 = document.createElement('button');
   btn1.classList.add('btn1');
+  btn1.innerHTML = PopupArray[i].button1;
+  btn1.appendChild(imageLive);
+ 
+  const imageSource = document.createElement('img');
+  imageSource.src = PopupArray[i].button2Img;  
 
   const btn2 = document.createElement('button');
   btn2.classList.add('btn2');
+  btn2.innerHTML = PopupArray[i].button2;
+  btn2.appendChild(imageSource);
+  
 
   const btnRow = document.createElement('div');
   btnRow.classList.add('btn-row');
@@ -139,13 +136,14 @@ for (let i = 0; i < PopupArray.length; i += 1) {
   ContainerPopup.appendChild(card).appendChild(ul).appendChild(li9);
   ContainerPopup.appendChild(card).appendChild(btn1);
   ContainerPopup.appendChild(card).appendChild(btn2);
-  ContainerPopup.appendChild(card).appendChild(btnRow);
+  ContainerPopup.appendChild(card).appendChild(btnRow).appendChild(btn1);
+  ContainerPopup.appendChild(card).appendChild(btnRow).appendChild(btn2);
 }
 const popupwindow = document.querySelector('.popup-container');
 const popupclose = document.querySelector('.popup-close');
 
 popupopen.addEventListener('click', () => {
-  popupwindow.classList.toggle('show'); // here
+  popupwindow.classList.toggle('show');
   maincontainer.style.filter = 'blur(50px)';
 });
 
@@ -164,7 +162,7 @@ popupopen4.addEventListener('click', () => {
   maincontainer.style.filter = 'blur(50px)';
 });
 
-popupclose.addEventListener('click', () => { // here
+popupclose.addEventListener('click', () => { 
   popupwindow.classList.remove('show');
   maincontainer.style.filter = 'blur(0px)';
 });
