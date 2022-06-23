@@ -12,7 +12,7 @@ hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   navMenu.classList.toggle('active');
 });
-  
+
 document.querySelectorAll('.nav-link').forEach((n) => n.addEventListener('click', () => {
   hamburger.classList.remove('active');
   navMenu.classList.remove('active');
@@ -26,7 +26,7 @@ const PopupArray = [{
   techstack1: 'html',
   techstack2: 'Ruby on rails',
   techstack3: 'css',
-  techstack4: 'Github', 
+  techstack4: 'Github',
 }];
 
 const ContainerPopup = document.getElementsByClassName('popup');
@@ -37,7 +37,7 @@ for (let i = 0; i < PopupArray.length; i += 1) {
 
   const head = document.createElement('div');
   head.classList.add('popup-head');
-  
+
   const title = document.createElement('h2');
   title.classList.add('popup-title');
   title.innerHTML = PopupArray[i].title;
@@ -65,7 +65,7 @@ for (let i = 0; i < PopupArray.length; i += 1) {
   const imageDivider = document.createElement('img');
   imageDivider.classList.add('popup-divider');
   imageDivider.innerHTML = PopupArray[i].imgDiv;
-  
+
   const ul = document.createElement('ul');
   ul.classList.add('popup-tech-container');
 
@@ -106,7 +106,7 @@ for (let i = 0; i < PopupArray.length; i += 1) {
 
   const btnRow = document.createElement('div');
   btnRow.classList.add('btn-row');
-  
+
   ContainerPopup.appendChild(card).appendChild(head).appendChild(title);
   ContainerPopup.appendChild(card).appendChild(head).appendChild(closebtn).appendChild(bar1);
   ContainerPopup.appendChild(card).appendChild(head).appendChild(closebtn).appendChild(bar2);
@@ -130,22 +130,22 @@ for (let i = 0; i < PopupArray.length; i += 1) {
     popupwindow.classList.toggle('show');
     maincontainer.style.filter = 'blur(50px)';
   });
-  
+
   popupopen2.addEventListener('click', () => {
     popupwindow.classList.toggle('show');
     maincontainer.style.filter = 'blur(10px)';
   });
-  
+
   popupopen3.addEventListener('click', () => {
     popupwindow.classList.toggle('show');
     maincontainer.style.filter = 'blur(10px)';
   });
-  
+
   popupopen4.addEventListener('click', () => {
     popupwindow.classList.toggle('show');
     maincontainer.style.filter = 'blur(10px)';
   });
-  
+
   popupclose.addEventListener('click', () => {
     popupwindow.classList.remove('show');
     maincontainer.style.filter = 'blur(0px)';
