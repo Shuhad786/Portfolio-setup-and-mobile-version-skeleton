@@ -28,7 +28,7 @@ const PopupArray = [{
   button1: 'See Live',
   button2: 'See Source',
   button1Img: './images/SeeLive.png',
-  button2Img: './images/SeeSource.png'
+  button2Img: './images/SeeSource.png',
 }];
 
 const ContainerPopup = document.querySelector('.popup');
@@ -117,21 +117,20 @@ for (let i = 0; i < PopupArray.length; i += 1) {
   li9.appendChild(imageDivider5);
 
   const imageLive = document.createElement('img');
-  imageLive.src = PopupArray[i].button1Img;  
+  imageLive.src = PopupArray[i].button1Img;
 
   const btn1 = document.createElement('button');
   btn1.classList.add('btn1');
   btn1.innerHTML = PopupArray[i].button1;
   btn1.appendChild(imageLive);
- 
+
   const imageSource = document.createElement('img');
-  imageSource.src = PopupArray[i].button2Img;  
+  imageSource.src = PopupArray[i].button2Img;
 
   const btn2 = document.createElement('button');
   btn2.classList.add('btn2');
   btn2.innerHTML = PopupArray[i].button2;
   btn2.appendChild(imageSource);
-  
 
   const btnRow = document.createElement('div');
   btnRow.classList.add('btn-row');
@@ -179,7 +178,7 @@ popupopen4.addEventListener('click', () => {
   maincontainer.style.filter = 'blur(50px)';
 });
 
-popupclose.addEventListener('click', () => { 
+popupclose.addEventListener('click', () => {
   popupwindow.classList.remove('show');
   maincontainer.style.filter = 'blur(0px)';
 });
