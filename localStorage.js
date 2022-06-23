@@ -1,9 +1,14 @@
 const form = document.querySelector('.form-info');
 
-const { fname, lname, name, email, messagebox } = form.elements;
+const { 
+  fname, lname, name, email, messagebox 
+} 
+= form.elements;
 
 if (!localStorage.getItem('formObj')) {
-  const formData = { fnameData: '', lnameData: '', nameData: '', emailData: '', messageData: '' };
+  const formData = { 
+    fnameData: '', lnameData: '', nameData: '', emailData: '', messageData: '' 
+  };
 
   localStorage.setItem('formObj', JSON.stringify(formData));
 }
@@ -17,11 +22,11 @@ const reservedata = (element, val) => {
 });
 }
 
-reservedata(fname, 'fnameData')
-reservedata(lname, 'lnameData')
-reservedata(name, 'nameData')
-reservedata(email, 'emailData')
-reservedata(messagebox, 'messageData')
+reservedata(fname, 'fnameData');
+reservedata(lname, 'lnameData');
+reservedata(name, 'nameData');
+reservedata(email, 'emailData');
+reservedata(messagebox, 'messageData');
 
 const formData = JSON.parse(localStorage.getItem('formObj'));
 fname.value = formData.fnameData;
