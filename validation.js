@@ -5,7 +5,7 @@ submitBtn.addEventListener('click', () => {
   const emailVal = document.querySelector('.email').value;
 
   if (!validateEmail(emailVal)) {
-    window.customAlert(
+    window.alert(
       'Please enter email as lower case eg. shuhad.loofer@gmail.com',
     );
   }
