@@ -25,17 +25,17 @@ popupopen.addEventListener('click', () => {
 
 popupopen2.addEventListener('click', () => {
   popupwindow.classList.toggle('show');
-  maincontainer.style.filter = 'blur(10px)';
+  maincontainer.style.filter = 'blur(50px)';
 });
 
 popupopen3.addEventListener('click', () => {
   popupwindow.classList.toggle('show');
-  maincontainer.style.filter = 'blur(10px)';
+  maincontainer.style.filter = 'blur(50px)';
 });
 
 popupopen4.addEventListener('click', () => {
   popupwindow.classList.toggle('show');
-  maincontainer.style.filter = 'blur(10px)';
+  maincontainer.style.filter = 'blur(50px)';
 });
 
 popupclose.addEventListener('click', () => {
