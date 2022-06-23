@@ -1,13 +1,13 @@
 const form = document.querySelector('.form-info');
 
-const { 
-  fname, lname, name, email, messagebox 
-} 
+const {
+  fname, lname, name, email, messagebox
+}
 = form.elements;
 
 if (!localStorage.getItem('formObj')) {
-  const formData = { 
-    fnameData: '', lnameData: '', nameData: '', emailData: '', messageData: '' 
+  const formData = {
+    fnameData: '', lnameData: '', nameData: '', emailData: '', messageData: ''
   };
 
   localStorage.setItem('formObj', JSON.stringify(formData));
