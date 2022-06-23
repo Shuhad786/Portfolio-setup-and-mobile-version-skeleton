@@ -1,4 +1,4 @@
-const submitBtn = document.querySelector(".button");
+const submitBtn = document.querySelector(".contact-button");
 const validateEmail = (email) => {
   return email.match(
     /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9-]+(?:.[a-z0-9-]+)*$/
