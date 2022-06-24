@@ -2,6 +2,7 @@ html {
   margin: 0;
   padding: 0;
   width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -1625,10 +1626,6 @@ nav:hover {
     top: 0;
     flex-direction: column;
     justify-content: center;
-    background-image: url(./images/Popup-bg.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     opacity: 0;
     pointer-events: none;
   }
@@ -1641,9 +1638,17 @@ nav:hover {
     opacity: 1;
     pointer-events: auto;
     flex-direction: column;
-    background-image: url(./images/Popup-bg.png);
-    background-size: cover;
     width: 100%;
+    overflow: auto;
+  }
+
+  .popup-bg {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    height: 1176px;
+    top: 0;
+    left: 0;
   }
 
   .popup-head {
@@ -1786,21 +1791,33 @@ nav:hover {
     opacity: 0;
     pointer-events: none;
     width: 1156px;
-    height: 1176px;
+    height: 100%;
+    overflow: auto;
+    z-index: 1;
   }
 
   .popup-container.show {
+    box-sizing: border-box;
     position: fixed;
     display: flex;
     left: 15%;
-    top: 1%;
+    top: 10%;
     opacity: 1;
+    z-index: 1;
     pointer-events: auto;
     flex-direction: column;
-    background-image: url(./images/Popup-bg.png);
-    background-size: cover;
-    height: 1176px;
     width: 1156px;
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  .popup-bg {
+    width: 1156px;
+    position: absolute;
+    z-index: -1;
+    height: 1176px;
+    top: 0;
+    left: 0;
   }
 
   .popup-head {
@@ -1808,8 +1825,9 @@ nav:hover {
     padding: 10px;
     justify-content: space-between;
     width: 80%;
+    padding-top: 500px;
     margin-left: 125px;
-    margin-top: 20px;
+    margin-top: 100px;
     order: 0;
   }
 
@@ -1907,7 +1925,8 @@ nav:hover {
     justify-content: center;
     gap: 160px;
     margin-left: 60px;
-    margin-top: 40px;
+    margin-top: 30px;
+    margin-bottom: 40px;
   }
 
   .btn-row .btn1 {

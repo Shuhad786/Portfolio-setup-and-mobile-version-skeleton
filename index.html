@@ -203,9 +203,10 @@
                     maxlength="30" />
                 <input class="email" type="email" name="email" placeholder="Enter your email address" required
                     pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" />
+                <span id="error"></span>
                 <textarea class="textareabox" name="messagebox" placeholder="Enter text here" rows="10" cols="30"
                     required maxlength="500"></textarea>
-                <button class="contact-button" type="submit">Send</button>
+                <button class="contact-button" onclick="errorMessage()" type="submit">Send</button>
             </form>
             <img class="large_divider" src="./images/Rectangle%2042.png" alt="final divider" />
             <div class="icons-bottom">

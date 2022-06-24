@@ -18,6 +18,7 @@ document.querySelectorAll('.nav-link').forEach((n) => n.addEventListener('click'
 
 const PopupArray = [{
   title: 'Multi-Post Stories',
+  imgbg: './images/Popup-bg.png',
   img: './images/projectImg.png',
   imgDiv: './images/Rectangle70.png',
   text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting  ever since the 1500s, when an unknown printer took a galley of type veris lapoa todoe.',
@@ -36,6 +37,10 @@ const ContainerPopup = document.querySelector('.popup');
 for (let i = 0; i < PopupArray.length; i += 1) {
   const card = document.createElement('div');
   card.classList.add('popup-container');
+
+  const imagebg = document.createElement('img');
+  imagebg.classList.add('popup-bg');
+  imagebg.src = PopupArray[i].imgbg
 
   const head = document.createElement('div');
   head.classList.add('popup-head');
@@ -151,6 +156,7 @@ for (let i = 0; i < PopupArray.length; i += 1) {
   const btnRow = document.createElement('div');
   btnRow.classList.add('btn-row');
 
+  ContainerPopup.appendChild(card).appendChild(imagebg);
   ContainerPopup.appendChild(card).appendChild(head).appendChild(title);
   ContainerPopup.appendChild(card).appendChild(head).appendChild(closebtn).appendChild(bar1);
   ContainerPopup.appendChild(card).appendChild(head).appendChild(closebtn).appendChild(bar2);
