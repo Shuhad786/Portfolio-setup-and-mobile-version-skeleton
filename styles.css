@@ -2,6 +2,7 @@ html {
   margin: 0;
   padding: 0;
   width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -58,7 +59,7 @@ body {
     width: 80px;
     height: 80px;
     top: 570px;
-    left: 350px;
+    left: 100%;
     background: #edecff;
     filter: blur(20px);
     border-radius: 50%;
@@ -359,19 +360,27 @@ body {
   align-items: center;
   text-align: center;
   letter-spacing: 0.03em;
-  gap: 1000px;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.top .nav1 .nav-menu {
+.nav1 {
   display: flex;
   width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 40px;
+}
+
+.nav-menu {
+  display: flex;
   text-align: center;
   align-items: center;
   gap: 25px;
 }
 
-.top .nav1 .nav-item {
-  display: inline;
+.nav-item {
   line-height: 16px;
   width: 100%;
   list-style: none;
@@ -724,7 +733,7 @@ nav:hover {
     margin: 0%;
   }
 
-  .mobile-container .Project_work .workform1 button {
+  .mobile-container .Project_work .workform1 .button {
     display: inline-block;
     align-items: center;
     text-align: center;
@@ -790,7 +799,7 @@ nav:hover {
     background: #555;
   }
 
-  .mobile-container .Project_work .workform2 button {
+  .mobile-container .Project_work .workform2 .button2 {
     display: inline-block;
     align-items: center;
     text-align: center;
@@ -855,7 +864,7 @@ nav:hover {
     background: #555;
   }
 
-  .mobile-container .Project_work .workform3 button {
+  .mobile-container .Project_work .workform3 .button3 {
     display: inline-block;
     align-items: center;
     text-align: center;
@@ -915,7 +924,7 @@ nav:hover {
     background: #555;
   }
 
-  .mobile-container .Project_work .workform4 button {
+  .mobile-container .Project_work .workform4 .button4 {
     display: inline-block;
     align-items: center;
     text-align: center;
@@ -1137,7 +1146,7 @@ nav:hover {
   padding: 0%;
 }
 
-.Project_work .workform2 button {
+.Project_work .workform2 .button2 {
   display: inline-block;
   align-items: center;
   text-align: center;
@@ -1205,7 +1214,7 @@ nav:hover {
   padding: 0%;
 }
 
-.Project_work .workform3 button {
+.Project_work .workform3 .button3 {
   display: inline-block;
   align-items: center;
   text-align: center;
@@ -1274,7 +1283,7 @@ nav:hover {
   margin: 0%;
 }
 
-.Project_work .workform4 button {
+.Project_work .workform4 .button4 {
   display: inline-block;
   align-items: center;
   text-align: center;
@@ -1414,7 +1423,7 @@ nav:hover {
     box-shadow: 0 0 5px 1px red;
   }
 
-  .mobile-container .Contact-form .button {
+  .mobile-container .Contact-form .contact-button {
     display: inline-block;
     align-items: center;
     text-align: center;
@@ -1552,7 +1561,7 @@ nav:hover {
   order: 0;
 }
 
-.Contact-form .button {
+.Contact-form .contact-button {
   display: inline-block;
   align-items: center;
   text-align: center;
@@ -1606,6 +1615,351 @@ nav:hover {
   height: 20px;
   width: 17.99px;
   margin-left: 30px;
+}
+
+/* popup window */
+@media (max-width: 768px) {
+  .popup-container {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .popup-container.show {
+    position: fixed;
+    display: flex;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+  }
+
+  .popup-bg {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    height: 1176px;
+    top: 0;
+    left: 0;
+  }
+
+  .popup-head {
+    display: flex;
+    padding: 10px;
+    margin-left: 50px;
+    justify-content: space-between;
+    width: 375px;
+  }
+
+  .popup-title {
+    width: 226px;
+    height: 58px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 28px;
+    color: #fff;
+  }
+
+  .popup-close {
+    display: block;
+    margin-top: 5px;
+    margin-right: 10px;
+  }
+
+  .popup-bar {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: white;
+  }
+
+  .popup-bar:nth-child(1) {
+    transform: translateY(6px) skewY(45deg);
+  }
+
+  .popup-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .popup-bar:nth-child(3) {
+    transform: translateY(0) skewY(-45deg);
+  }
+
+  .popup-project-image {
+    width: 279px;
+    height: 181px;
+    margin-left: 100px;
+  }
+
+  .popup-text {
+    width: 279px;
+    height: 289px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 20px;
+    text-align: center;
+    color: #fff;
+    margin-left: 100px;
+  }
+
+  .popup-tech-container {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    color: #fff;
+    margin-left: 40px;
+  }
+
+  .popup-tech-container li {
+    padding-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+  }
+
+  .popup-divider {
+    width: 3px;
+    height: 40px;
+  }
+
+  .btn1 img {
+    height: 22px;
+    width: 22px;
+  }
+
+  .btn1 {
+    display: flex;
+    margin-left: 180px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    width: 130px;
+    height: 60px;
+    background-color: #7d73fc;
+    color: #fff;
+  }
+
+  .btn2 img {
+    height: 18px;
+    width: 18px;
+  }
+
+  .btn2 {
+    display: flex;
+    margin-left: 175px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    width: 140px;
+    height: 60px;
+    background-color: #7d73fc;
+    color: #fff;
+  }
+
+  .btn-row {
+    display: none;
+  }
+
+  .Git {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .popup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    pointer-events: none;
+    width: 1156px;
+    height: 100%;
+    overflow: auto;
+    z-index: 1;
+  }
+
+  .popup-container.show {
+    box-sizing: border-box;
+    position: fixed;
+    display: flex;
+    left: 15%;
+    top: 10%;
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+    flex-direction: column;
+    width: 1156px;
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  .popup-bg {
+    width: 1156px;
+    position: absolute;
+    z-index: -1;
+    height: 1176px;
+    top: 0;
+    left: 0;
+  }
+
+  .popup-head {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    width: 80%;
+    padding-top: 500px;
+    margin-left: 125px;
+    margin-top: 100px;
+    order: 0;
+  }
+
+  .popup-title {
+    height: 58px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 28px;
+    color: #fff;
+    order: 0;
+  }
+
+  .popup-close {
+    display: block;
+    margin-top: 5px;
+    margin-right: 10px;
+    top: 0;
+  }
+
+  .popup-bar {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: white;
+  }
+
+  .popup-bar:nth-child(1) {
+    transform: translateY(6px) skewY(45deg);
+  }
+
+  .popup-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .popup-bar:nth-child(3) {
+    transform: translateY(0) skewY(-45deg);
+  }
+
+  .popup-project-image {
+    width: 83%;
+    height: 500px;
+    order: 0;
+    margin-left: 100px;
+  }
+
+  .popup-text {
+    order: 0;
+    width: 684px;
+    height: 236px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    margin-top: 40px;
+    margin-left: 250px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .popup-tech-container {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    color: #fff;
+    justify-content: center;
+  }
+
+  .popup-tech-container li {
+    padding-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+  }
+
+  .popup-divider {
+    width: 3px;
+    height: 40px;
+  }
+
+  .btn1 {
+    display: none;
+  }
+
+  .btn2 {
+    display: none;
+  }
+
+  .btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 160px;
+    margin-left: 60px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+
+  .btn-row .btn1 {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    width: 130px;
+    height: 60px;
+    background-color: #7d73fc;
+    color: #fff;
+  }
+
+  .btn-row .btn1 img {
+    margin-left: 20px;
+    height: 22px;
+    width: 22px;
+  }
+
+  .btn-row .btn2 img {
+    margin-left: 20px;
+    height: 18px;
+    width: 18px;
+  }
+
+  .btn-row .btn2 {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    width: 140px;
+    height: 60px;
+    background-color: #7d73fc;
+    color: #fff;
+  }
 }
 
 /* end of code */

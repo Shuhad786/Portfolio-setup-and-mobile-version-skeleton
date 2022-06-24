@@ -10,7 +10,7 @@ My first microverse milestone to create a mobile webpage
 ## Built With
 
 - Major languages
-HTML5 and CSS3
+HTML5, CSS3 and JavaScript
 - Frameworks
 npm package for linters 
 - Technologies used
