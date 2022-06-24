@@ -40,7 +40,7 @@ for (let i = 0; i < PopupArray.length; i += 1) {
 
   const imagebg = document.createElement('img');
   imagebg.classList.add('popup-bg');
-  imagebg.src = PopupArray[i].imgbg
+  imagebg.src = PopupArray[i].imgbg;
 
   const head = document.createElement('div');
   head.classList.add('popup-head');

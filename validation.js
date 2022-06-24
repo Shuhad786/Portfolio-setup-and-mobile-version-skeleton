@@ -9,8 +9,8 @@ submitBtn.addEventListener('click', () => {
     error.textContent = 'Please enter a valid email address using lower case letters and numbers eg. shuhad@gmail.com';
     error.style.color = 'red';
   }
+
   else {
     error.style.display = 'none';
   }
-
 });
